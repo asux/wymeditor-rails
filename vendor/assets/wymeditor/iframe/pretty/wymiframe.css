@@ -169,7 +169,7 @@ blockquote:hover::before,
 pre:hover::before,
 address:hover::before {
 	color: rgb(65,105,225);
-	background: rgba(255,255,255,0.);
+	background: rgba(255,255,255,0.1);
 	outline: 1px solid rgba(65,105,225,0.9);
 }
 div::before                          { content: "document division" } /* official names: https://developer.mozilla.org/en/HTML/Element */
