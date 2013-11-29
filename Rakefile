@@ -4,21 +4,6 @@ begin
 rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
-begin
-  require 'rdoc/task'
-rescue LoadError
-  require 'rdoc/rdoc'
-  require 'rake/rdoctask'
-  RDoc::Task = Rake::RDocTask
-end
-
-RDoc::Task.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'WymeditorRails'
-  rdoc.options << '--line-numbers'
-  rdoc.rdoc_files.include('README.rdoc')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-end
 
 APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
 # load 'rails/tasks/engine.rake'
@@ -48,8 +33,8 @@ end
 task :extract do
   `rm -rf tmp/wymeditor`
   `tar -xf tmp/wymeditor.tar.gz -C tmp/`
-  `rm -rf vendor/assets/wymeditor`
-  `mkdir -p vendor/assets/wymeditor`
-  `mv tmp/wymeditor/wymeditor/* vendor/assets/wymeditor/`
+  `rm -rf app/assets/wymeditor`
+  `mkdir -p app/assets/wymeditor`
+  `mv tmp/wymeditor/wymeditor/* app/assets/wymeditor/`
 end
 
