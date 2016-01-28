@@ -1,4 +1,4 @@
 module WymeditorRails
-  VERSION = "0.1.0"
-  WYMEDITOR_VERSION = "1.0.0b5"
+  VERSION = '0.2.0'
+  WYMEDITOR_VERSION = '1.1.1'
 end
